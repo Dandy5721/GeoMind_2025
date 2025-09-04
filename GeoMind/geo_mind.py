@@ -593,7 +593,7 @@ class GeoMamba(nn.Module):
         )
         ssm_dtype = self.dt_proj.weight.dtype if dtype is None else dtype
         # ssm_dtype = torch.float32
-        ssm_state = torch.zeros(
+        ssm_state = torch.ones(
             batch_size, self.d_model * self.expand, self.d_state, device=device, dtype=ssm_dtype
         )
         return conv_state, ssm_state
