@@ -588,7 +588,7 @@ class GeoMamba(nn.Module):
     def allocate_inference_cache(self, batch_size, max_seqlen, dtype=None, **kwargs):
         device = self.out_proj.weight.device
         conv_dtype = self.conv1d.weight.dtype if dtype is None else dtype
-        conv_state = torch.zeros(
+        conv_state = torch.ones(
             batch_size, self.d_model * self.expand, self.d_conv, device=device, dtype=conv_dtype
         )
         ssm_dtype = self.dt_proj.weight.dtype if dtype is None else dtype
@@ -602,14 +602,14 @@ class GeoMamba(nn.Module):
         assert self.layer_idx is not None
         if self.layer_idx not in inference_params.key_value_memory_dict:
             batch_shape = (batch_size,)
-            conv_state = torch.zeros(
+            conv_state = torch.ones(
                 batch_size,
                 self.d_model * self.expand,
                 self.d_conv,
                 device=self.conv1d.weight.device,
                 dtype=self.conv1d.weight.dtype,
             )
-            ssm_state = torch.zeros(
+            ssm_state = torch.ones(
                 batch_size,
                 self.d_model * self.expand,
                 self.d_state,
