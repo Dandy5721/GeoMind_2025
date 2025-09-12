@@ -60,8 +60,8 @@ python GeoMind/geomind_train.py \
   --dataset ADNI \
   --data_root ./data/ADNI \
   --epochs 300 \
-  --layer 4 \
-  --lr 1e-3 \
-  --hidden 512 \
+  --layer 2 \
+  --lr 0.00005 \
+  --hidden 360 \
   --gpu cuda:0
 ```
