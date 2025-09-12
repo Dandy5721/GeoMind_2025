@@ -59,7 +59,7 @@ GeoMind_2025/data/
 python GeoMind/geomind_train.py \
   --dataset ADNI \
   --data_root ./data/ADNI \
-  --epochs 200 \
+  --epochs 300 \
   --layer 4 \
   --lr 1e-3 \
   --hidden 512 \
