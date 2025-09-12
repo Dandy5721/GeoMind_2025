@@ -44,9 +44,14 @@ pip install -r conda_requirements.txt
 ## Data
 ```text
 GeoMind_2025/data/
+├── HCPWM/
 ├── ADNI/
+├── OASIS/
 ├── PPMI/
-└── NIFD/
+├── ABIDE/
+├── SEED/
+├── DEAP/
+└── HCI/
 ```
 
 ## Train GeoMind
